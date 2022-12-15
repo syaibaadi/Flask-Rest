@@ -17,7 +17,7 @@ def dosens():
 def dosenDetail(id):
     if request.method == 'GET':
         return DosenController.detail(id)
-    elif request.method == 'POST':
+    elif request.method == 'PUT':
         return DosenController.ubah(id)
     else:
         return DosenController.hapus(id)
