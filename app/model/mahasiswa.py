@@ -3,12 +3,12 @@ from app.model.dosen import Dosen
 
 class Mahasiswa(db.Model):
     id = db.Column(db.BigInteger, primary_key=True, autoincrement=True)
-    nidn = db.Column(db.String(10), nullable=False)
+    nim = db.Column(db.String(10), nullable=False)
     nama = db.Column(db.String(50), nullable=False)
     alamat = db.Column(db.String(100), nullable=False)
     phone = db.Column(db.String(15), nullable=False)
-    dosen_satu = db.Column(db.BigInteger, db.ForeignKey(Dosen.id))
-    dosen_dua = db.Column(db.BigInteger, db.ForeignKey(Dosen.id))
+    dosen_satu = db.Column(db.BigInteger, db.ForeignKey(Dosen.id, ondelete='CASCADE'))
+    dosen_dua = db.Column(db.BigInteger, db.ForeignKey(Dosen.id, ondelete='CASCADE'))
 
     def __repr__(self):
         return '<Mahasiswa {}>'.format(self.name)
