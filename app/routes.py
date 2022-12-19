@@ -1,13 +1,21 @@
-from app import app
+from app import app, response
 from flask import request
 from app.controller import DosenController 
 from app.controller import UserController
 from flask_swagger_ui import get_swaggerui_blueprint
-
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
 
 @app.route('/')
 def index():
     return "<b>Hello</b>"
+
+@app.route('/protected', methods=['GET'])
+@jwt_required()
+def protected():
+    current_user = get_jwt_identity()
+    return response.success(current_user, 'Sukses')
+
 
 @app.route('/dosen', methods=['GET', 'POST'])
 def dosens():
@@ -33,12 +41,10 @@ def dosenDetail(id):
 def logins():
     return UserController.login()
 
-# SWAGGER_URL = '/api/docs'
-# API_URL = '/static/openapi.json'
-# swaggerui_blueprint = get_swaggerui_blueprint(
-#     SWAGGER_URL, 
-#     API_URL,
-#     config={
-#         'app-name' : 'syaiba-Python3-Flask-Rest-Boilerplate'
-#     })
-# app.register_blueprint(swaggerui_blueprint)
+@app.route('/file-upload', methods=['POST'])
+def uploads():
+    return UserController.upload()
+
+@app.route('/api/dosen/page', methods=['GET'])
+def pagination():
+    return DosenController.paginate()
