@@ -1,0 +1,176 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Flask API Docs",
+    "description": ""
+  },
+  "paths": {
+    "/dosen": {
+      "get": {
+        "tags": [
+          "Dosen"
+        ],
+        "description": "Returns Data Dosen",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "description": "Masukan id dosen",
+            "schema": {
+              "type": "string",
+              "example": "id dosen"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dosen",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "200 OK"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Dosen"
+        ],
+        "description": "Insert Data Dosen",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Nama",
+            "required": true,
+            "description": "dosen",
+            "schema": {
+              "type": "string",
+              "example": "nama dosen"
+            }
+          },
+          {
+            "in": "query",
+            "name": "Email",
+            "required": true,
+            "description": "dosen",
+            "schema": {
+              "type": "string",
+              "example": "email dosen"
+            }
+          },
+          {
+            "in": "query",
+            "name": "Password",
+            "required": true,
+            "description": "dosen",
+            "schema": {
+              "type": "string",
+              "example": "password dosen"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dosen",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "200 OK"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Dosen"
+        ],
+        "description": "Insert Data Dosen",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Nama",
+            "required": true,
+            "description": "dosen",
+            "schema": {
+              "type": "string",
+              "example": "nama dosen"
+            }
+          },
+          {
+            "in": "query",
+            "name": "Email",
+            "required": true,
+            "description": "dosen",
+            "schema": {
+              "type": "string",
+              "example": "email dosen"
+            }
+          },
+          {
+            "in": "query",
+            "name": "Password",
+            "required": true,
+            "description": "dosen",
+            "schema": {
+              "type": "string",
+              "example": "password dosen"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dosen",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "200 OK"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Dosen"
+        ],
+        "description": "Insert Data Dosen",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "description": "dosen",
+            "schema": {
+              "type": "string",
+              "example": "id dosen"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dosen",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "200 OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

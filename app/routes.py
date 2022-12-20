@@ -1,5 +1,5 @@
 from app import app, response
-from flask import request
+from flask import request, make_response, send_from_directory, render_template
 from app.controller import DosenController 
 from app.controller import UserController
 from flask_swagger_ui import get_swaggerui_blueprint
@@ -23,6 +23,12 @@ def dosens():
         return DosenController.index()
     else:
         return DosenController.save()
+
+@app.route('/api/docs')
+def get_docs():
+    print('sending docs')
+    return render_template('swaggerui.html')
+
 
 @app.route('/createadmin', methods=['POST'])
 def admins():
